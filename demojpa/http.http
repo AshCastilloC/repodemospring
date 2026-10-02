@@ -1,3 +1,22 @@
+POST https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/marca/1001/nuevo
+Content-Type: application/json
+
+{
+ "nombre":"Ashly",
+"descripcion": "Ashly Castillo Caccire",
+	"precio":600,
+	"stock":5
+}
+
+### Ajustar stock
+POST https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/stock/ajuste
+Content-Type: application/json
+
+{
+  "idProducto": 1012,
+  "stock": 3
+}
+
 ### Registrar pedido
 POST https://bug-free-space-system-4w9wpv44rqx377xv-8080.app.github.dev/pedido/nuevo
 Content-Type: application/json
@@ -5,14 +24,15 @@ Content-Type: application/json
 {
  "items":[
    {
-     "idProducto": 1004,
-     "cantidad": 2,
+     "idProducto": 1012,
+     "cantidad": 10,
      "precioUnitario":3000
-   },
-   {
-     "idProducto": 1005,
-     "cantidad": 3,
-     "precioUnitario":50
    }
  ]
 }
+
+### Consultar producto por id
+GET https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/1028
+
+###multiusuario es por curl 
+
