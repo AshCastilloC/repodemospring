@@ -15,13 +15,14 @@ export class ViewProductos {
 
   productos!: any[];
 
-  mostrarModal = false;
-
   private serviceAdministrarProductos = inject(ServiceAdministrarProductos);
 
   ngOnInit(): void {
     this.serviceAdministrarProductos.getProductos().subscribe({
-    next: (data) => console.log('Datos recibidos del servicio:', data),
+    next: (data) => {
+      console.log('Datos recibidos del servicio:', data);
+      this.productos=data;
+    },
     error: (err) => console.error('Error al llamar al servicio:', err),
     });
   }
@@ -31,4 +32,3 @@ irAProductoNuevo() {
 }
 
 }
-  
